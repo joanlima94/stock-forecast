@@ -1,5 +1,9 @@
 from os import listdir
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
 
 def StockNameImportation():
     stock_list = listdir('statements')
