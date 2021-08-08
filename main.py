@@ -2,9 +2,10 @@ from os import listdir
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import requests
+from bs4 import BeautifulSoup
 
-
-
+"""
 def StockNameImportation():
     stock_list = listdir('statements')
     new = []
@@ -100,3 +101,12 @@ if __name__ == "__main__":
     # Update stock names list
     stock_names = list(quotation.keys())
     print(len(stock_names))
+"""
+
+req = requests.get('https://fundamentus.com.br/detalhes.php')
+
+if req.status_code == 200:
+    print('Requisição bem sucedida!')
+    content = req.content
+else:
+    print("Requsição não foi bem sucedida!")
